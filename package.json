@@ -1,5 +1,5 @@
 {
-  "name": "Webpack_boilerplate",
+  "name": "T0-DO_LIST",
   "version": "1.0.0",
   "description": "A simple project containing ready-to-use webpack set-up",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/see-why/Webpack_boilerplate.git"
+    "url": "git+https://github.com/see-why/To-do_List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/see-why/Webpack_boilerplate/issues"
+    "url": "https://github.com/see-whyTo-do_List/issues"
   },
-  "homepage": "https://github.com/see-why/Webpack_boilerplate#readme",
+  "homepage": "https://github.com/see-why/To-do_List#readme",
   "devDependencies": {
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
