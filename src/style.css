@@ -87,6 +87,11 @@ button:hover {
   height: 1.8em;
 }
 
+.menu-icon-img:hover {
+  content: url('../images/menu-bold.png');
+  height: 1.8em;
+}
+
 .clear-list-button {
   width: 100%;
   font-size: 2em;
