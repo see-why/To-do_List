@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+li:hover {
+  cursor: move;
+}
+
+.todo-list-ul-li-box,
+button:hover {
+  cursor: pointer;
+}
+
+.main {
+  background: #fff;
+  height: auto;
+  width: 90%;
+  margin: 5% 5%;
+}
+
+.todo-list-ul-li,
+.add-list-div,
+.main-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-list-ul,
+.add-list-div,
+.main-header {
+  padding: 2%;
+}
+
+.add-list-div {
+  border-top: 1px solid #f7f7f7;
+}
+
+.add-new-task {
+  font-size: 2em;
+  font-style: italic;
+  border: none;
+}
+
+.todo-list-ul-li-input,
+.add-new-task:focus {
+  outline: none;
+  border: none;
+}
+
+.todo-list-ul {
+  list-style: none;
+  border: 1px solid #f7f7f7;
+  margin: 0;
+}
+
+.todo-list-ul-li {
+  align-items: baseline;
+}
+
+.todo-list-ul-li-box {
+  height: 2em;
+  width: 2em;
+  margin-right: 20px;
+  outline: 3px solid #f7f7f7;
+}
+
+.todo-list-ul-li-input {
+  font-size: 2em;
+  border: none;
+}
+
+.refresh-img {
+  content: url('../images/refresh.svg');
+}
+
+.enter-img {
+  content: url('../images/enter.png');
+  height: 1.5em;
+  align-self: center;
+}
+
+.menu-icon-img {
+  content: url('../images/menu.png');
+  height: 1.8em;
+}
+
+.menu-icon-img:hover {
+  content: url('../images/menu-bold.png');
+  height: 1.8em;
+}
+
+.clear-list-button {
+  width: 100%;
+  font-size: 2em;
+  padding: 4%;
+  color: #808080;
+  border: 1px solid #f7f7f7;
+}
+
+.clear-list-button:hover {
+  text-decoration: underline;
+}
