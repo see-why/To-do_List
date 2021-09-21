@@ -2,7 +2,7 @@
 
 body {
   background-color: #f7f7f7;
-  font-family: 'Poppins';
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 li:hover {
@@ -35,7 +35,7 @@ button:hover {
 }
 
 .add-list-div {
-  border-top: 1px solid #f7f7f7;  
+  border-top: 1px solid #f7f7f7;
 }
 
 .add-new-task {
