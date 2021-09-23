@@ -60,6 +60,11 @@ button:hover {
   align-items: baseline;
 }
 
+.style-div:focus-within + img {
+  content: url('../images/thrash.svg');
+  cursor: pointer;
+}
+
 .todo-list-ul-li-box {
   height: 2em;
   width: 2em;
