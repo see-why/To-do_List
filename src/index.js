@@ -44,7 +44,7 @@ class TodoList {
 
       checkInput.addEventListener('change', (e) => {
         const textInput = e.target.parentNode.lastChild;
-        toggleCompleteTask(textInput); /* eslint-disable-line no-undef */
+        toggleCompleteTask(textInput);
         item.completed = checkInput.checked;
         this.saveToLocalStorage();
       });
