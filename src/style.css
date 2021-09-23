@@ -60,6 +60,11 @@ button:hover {
   align-items: baseline;
 }
 
+.style-div:focus-within + img {
+  content: url('../images/thrash.svg');
+  cursor: pointer;
+}
+
 .todo-list-ul-li-box {
   height: 2em;
   width: 2em;
@@ -93,7 +98,7 @@ button:hover {
 
 .menu-icon-img:hover {
   content: url('../images/menu-bold.png');
-  height: 1.8em;
+  height: 1.8em;  
 }
 
 .clear-list-button {
