@@ -1,13 +1,13 @@
-export function toggleCompleteTask(className) { /* eslint-disable-line no-unused-vars */
+export const toggleCompleteTask = (className) => {
   if (className.style.textDecoration === 'line-through') {
     className.style.textDecoration = 'none';
   } else {
     className.style.textDecoration = 'line-through';
   }
-}
+};
 
-export function strikeText(checked, className) {
+export const strikeText = (checked, className) => {
   if (checked) {
     toggleCompleteTask(className);
   }
-}
+};
