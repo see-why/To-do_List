@@ -67,6 +67,10 @@ button:hover {
   outline: 3px solid #f7f7f7;
 }
 
+.todo-list-ul-li-box:checked {
+  background: #66f;
+}
+
 .todo-list-ul-li-input {
   font-size: 2em;
   border: none;

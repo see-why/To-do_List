@@ -16,7 +16,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://see-why.github.io/To-do_List/)
+[Live Demo Link](https://see-why.github.io/To-do_List/dist/)
 
 
 ## Getting Started
