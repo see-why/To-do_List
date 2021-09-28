@@ -9,6 +9,7 @@ li:hover {
   cursor: move;
 }
 
+.style-div:focus-within + img,
 .todo-list-ul-li-box,
 button:hover {
   cursor: pointer;
@@ -38,9 +39,18 @@ button:hover {
   border-top: 1px solid #f7f7f7;
 }
 
+.clear-list-button,
+.todo-list-ul-li-input,
 .add-new-task {
   font-size: 2em;
+}
+
+.add-new-task {
   font-style: italic;
+}
+
+.add-new-task,
+.todo-list-ul-li-input {
   border: none;
 }
 
@@ -62,7 +72,6 @@ button:hover {
 
 .style-div:focus-within + img {
   content: url('../images/thrash.svg');
-  cursor: pointer;
 }
 
 .todo-list-ul-li-box {
@@ -77,8 +86,11 @@ button:hover {
 }
 
 .todo-list-ul-li-input {
-  font-size: 2em;
-  border: none;
+  width: 80%;
+}
+
+.style-div {
+  width: 90%;
 }
 
 .refresh-img {
@@ -93,17 +105,19 @@ button:hover {
 
 .menu-icon-img {
   content: url('../images/menu.png');
+}
+
+.menu-icon-img,
+.menu-icon-img:hover {
   height: 1.8em;
 }
 
 .menu-icon-img:hover {
   content: url('../images/menu-bold.png');
-  height: 1.8em;
 }
 
 .clear-list-button {
   width: 100%;
-  font-size: 2em;
   padding: 4%;
   color: #808080;
   border: 1px solid #f7f7f7;
