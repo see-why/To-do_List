@@ -124,8 +124,7 @@ class TodoList {
 
         strikeText(item.completed, textInput);
 
-        styleDiv.appendChild(checkInput);
-        styleDiv.appendChild(textInput);
+        styleDiv.append(checkInput, textInput);
 
         const img = document.createElement('img');
         img.src = '../images/menu.png';
@@ -147,8 +146,7 @@ class TodoList {
           }
         });
 
-        li.appendChild(styleDiv);
-        li.appendChild(img);
+        li.append(styleDiv, img);
 
         ul.appendChild(li);
 
