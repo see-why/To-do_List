@@ -1,4 +1,4 @@
-export const addTask = (array, task) => {
+const addTask = (array, task) => {
   const size = array.length;
   task.index = (size + 1).toString();
 
@@ -7,12 +7,12 @@ export const addTask = (array, task) => {
   return array;
 };
 
-export const deleteTask = (array, task) => {
+const deleteTask = (array, task) => {
   array = array.filter((item) => item.index !== task.index);
   return array;
 };
 
-export const rearrangeIndexs = (array) => {
+const rearrangeIndexs = (array) => {
   array.forEach((item, index) => {
     item.index = (index + 1).toString();
   });
@@ -20,7 +20,7 @@ export const rearrangeIndexs = (array) => {
   return array;
 };
 
-export const updateTask = (array, task) => {
+const updateTask = (array, task) => {
   if (task.description === '') {
     deleteTask(array, task);
   } else {
@@ -32,4 +32,8 @@ export const updateTask = (array, task) => {
   }
 
   return array;
+};
+
+export {
+  addTask, deleteTask, rearrangeIndexs, updateTask,
 };
