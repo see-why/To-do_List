@@ -42,14 +42,24 @@ Additional description about the project and its features.
 
 ### Run tests
 
+**$ run 'npm install' to couple all dependencies**
+**$ Execute the command 'npm run watch' to run the tests**
+
+
+
 ### Deployment
 
 
 
 👤 **Cyril Iyadi**
 
-- GitHub: [@githubhandle](https://github.com/see-why)
+- GitHub: [@see-why](https://github.com/see-why)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/cyril-iyadi-83517270)
+
+👤 **Alaukik**
+
+- GitHub: [@newhorizon-tech](https://github.com/newhorizon-tech)
+
 
 ## 🤝 Contributing
 
@@ -62,6 +72,6 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- my dog perry for the comforting lick here and there 
+- my dog perry for the comforting lick here and there
 ## 📝 License
 - This project is [MIT](./LICENSE) licensed.

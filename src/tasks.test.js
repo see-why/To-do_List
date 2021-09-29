@@ -1,4 +1,4 @@
-import { addTask, deleteTask } from './tasks';
+import { addTask, deleteTask } from './tasks.js';
 
 const task1 = {
   index: 0,
