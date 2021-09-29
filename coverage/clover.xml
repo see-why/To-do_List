@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1632926652398" clover="3.2.0">
+  <project timestamp="1632926652399" name="All files">
+    <metrics statements="19" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="1" elements="30" coveredelements="9" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
+    <file name="tasks.js" path="C:\Users\oiyadi\Documents\GitHub\To-do_List\src\tasks.js">
+      <metrics statements="19" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="7" count="3" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="34" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
