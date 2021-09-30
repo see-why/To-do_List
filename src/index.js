@@ -21,15 +21,7 @@ class TodoList {
   }
 
   clearAllCompleted = () => {
-    const arrayOfLists = Array.from(document.getElementsByClassName('todo-list-ul'));
-
-    arrayOfLists.forEach((item) => {
-      const check = item.firstChild.firstChild.firstChild;
-      const textInput = item.firstChild.firstChild.lastChild;
-
-      this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks, check.checked, textInput.id);
-    });
-    this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
+    this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks);
     this.saveToLocalStorage();
     this.reloadPage();
   };
