@@ -1,7 +1,7 @@
 import './style.css';
-import { toggleCompleteTask, strikeText } from './list.js';
+import { toggleCompleteTask, strikeText, updateStatus } from './list.js';
 import {
-  addTask, deleteTask, rearrangeIndexs, updateTask,
+  addTask, deleteTask, rearrangeIndexs, updateTask, deleteCompleted,
 } from './tasks.js';
 
 class TodoList {
@@ -30,12 +30,7 @@ class TodoList {
         const check = item.firstChild.firstChild.firstChild;
         const textInput = item.firstChild.firstChild.lastChild;
 
-        if (check.checked) {
-          const task = {
-            index: textInput.id,
-          };
-          this.ArrayOfTasks = deleteTask(this.ArrayOfTasks, task);
-        }
+        this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks, check.checked, textInput.id);
       });
       this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
       this.saveToLocalStorage();
@@ -82,7 +77,7 @@ class TodoList {
         checkInput.addEventListener('change', (e) => {
           const textInput = e.target.parentNode.lastChild;
           toggleCompleteTask(textInput);
-          item.completed = checkInput.checked;
+          this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, textInput.id, checkInput.checked);
           this.saveToLocalStorage();
         });
 
