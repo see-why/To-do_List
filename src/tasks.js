@@ -1,6 +1,6 @@
 const addTask = (array, task) => {
   const size = array.length;
-  task.index = (size + 1).toString();
+  task.index = size + 1;
 
   array.push(task);
 
@@ -14,7 +14,7 @@ const deleteTask = (array, task) => {
 
 const rearrangeIndexs = (array) => {
   array.forEach((item, index) => {
-    item.index = (index + 1).toString();
+    item.index = index + 1;
   });
 
   return array;

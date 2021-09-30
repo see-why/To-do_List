@@ -71,7 +71,8 @@ class TodoList {
         checkInput.addEventListener('change', (e) => {
           const textInput = e.target.parentNode.lastChild;
           toggleCompleteTask(textInput);
-          this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, textInput.id, checkInput.checked);
+          this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, parseInt(textInput.id, 10),
+            checkInput.checked);
           this.saveToLocalStorage();
         });
 
@@ -101,7 +102,7 @@ class TodoList {
 
         textInput.addEventListener('change', () => {
           const task = {
-            index: textInput.id,
+            index: parseInt(textInput.id, 10),
             description: textInput.value,
             completed: false,
           };
@@ -125,7 +126,7 @@ class TodoList {
 
           if (textInput.readOnly === false) {
             const task = {
-              index: textInput.id,
+              index: parseInt(textInput.id, 10),
             };
 
             this.ArrayOfTasks = deleteTask(this.ArrayOfTasks, task);
