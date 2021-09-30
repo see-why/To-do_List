@@ -20,22 +20,24 @@ class TodoList {
     localStorage.setItem('Tasks', JSON.stringify(this.ArrayOfTasks));
   }
 
+  clearAllCompleted = () => {
+    const arrayOfLists = Array.from(document.getElementsByClassName('todo-list-ul'));
+
+    arrayOfLists.forEach((item) => {
+      const check = item.firstChild.firstChild.firstChild;
+      const textInput = item.firstChild.firstChild.lastChild;
+
+      this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks, check.checked, textInput.id);
+    });
+    this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
+    this.saveToLocalStorage();
+    this.reloadPage();
+  };
+
   loadTasks() {
     const button = document.getElementById('clear-list-button');
 
-    button.addEventListener('click', () => {
-      const arrayOfLists = Array.from(document.getElementsByClassName('todo-list-ul'));
-
-      arrayOfLists.forEach((item) => {
-        const check = item.firstChild.firstChild.firstChild;
-        const textInput = item.firstChild.firstChild.lastChild;
-
-        this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks, check.checked, textInput.id);
-      });
-      this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
-      this.saveToLocalStorage();
-      this.reloadPage();
-    });
+    button.addEventListener('click', this.clearAllCompleted);
 
     const addInput = document.getElementById('add-new-task');
 
