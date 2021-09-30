@@ -26,11 +26,12 @@ class TodoList {
     this.reloadPage();
   };
 
-  loadTasks() {
+  addButtonEvent = () => {
     const button = document.getElementById('clear-list-button');
-
     button.addEventListener('click', this.clearAllCompleted);
+  }
 
+  addInputTagEvent = () => {
     const addInput = document.getElementById('add-new-task');
 
     addInput.addEventListener('change', () => {
@@ -45,7 +46,9 @@ class TodoList {
       this.saveToLocalStorage();
       this.reloadPage();
     });
+  }
 
+  loadTasks() {
     const divHolder = document.getElementById('list-holder');
 
     if (localStorage.getItem('Tasks') !== null) {
@@ -148,3 +151,5 @@ class TodoList {
 
 const App = new TodoList();
 App.loadTasks();
+App.addButtonEvent();
+App.addInputTagEvent();
