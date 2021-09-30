@@ -11,6 +11,10 @@
     "lint": "npx eslint . && npx stylelint **/*.{css,scss} && npx hint .",
     "watch": "npx jest --watchAll"
   },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/see-why/To-do_List.git"
