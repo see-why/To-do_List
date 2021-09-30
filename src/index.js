@@ -1,7 +1,7 @@
 import './style.css';
-import { toggleCompleteTask, strikeText } from './list.js';
+import { toggleCompleteTask, strikeText, updateStatus } from './list.js';
 import {
-  addTask, deleteTask, rearrangeIndexs, updateTask,
+  addTask, deleteTask, rearrangeIndexs, updateTask, deleteCompleted,
 } from './tasks.js';
 
 class TodoList {
@@ -20,27 +20,24 @@ class TodoList {
     localStorage.setItem('Tasks', JSON.stringify(this.ArrayOfTasks));
   }
 
+  clearAllCompleted = () => {
+    const arrayOfLists = Array.from(document.getElementsByClassName('todo-list-ul'));
+
+    arrayOfLists.forEach((item) => {
+      const check = item.firstChild.firstChild.firstChild;
+      const textInput = item.firstChild.firstChild.lastChild;
+
+      this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks, check.checked, textInput.id);
+    });
+    this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
+    this.saveToLocalStorage();
+    this.reloadPage();
+  };
+
   loadTasks() {
     const button = document.getElementById('clear-list-button');
 
-    button.addEventListener('click', () => {
-      const arrayOfLists = Array.from(document.getElementsByClassName('todo-list-ul'));
-
-      arrayOfLists.forEach((item) => {
-        const check = item.firstChild.firstChild.firstChild;
-        const textInput = item.firstChild.firstChild.lastChild;
-
-        if (check.checked) {
-          const task = {
-            index: textInput.id,
-          };
-          this.ArrayOfTasks = deleteTask(this.ArrayOfTasks, task);
-        }
-      });
-      this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
-      this.saveToLocalStorage();
-      this.reloadPage();
-    });
+    button.addEventListener('click', this.clearAllCompleted);
 
     const addInput = document.getElementById('add-new-task');
 
@@ -82,7 +79,7 @@ class TodoList {
         checkInput.addEventListener('change', (e) => {
           const textInput = e.target.parentNode.lastChild;
           toggleCompleteTask(textInput);
-          item.completed = checkInput.checked;
+          this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, textInput.id, checkInput.checked);
           this.saveToLocalStorage();
         });
 

@@ -34,6 +34,16 @@ const updateTask = (array, task) => {
   return array;
 };
 
+const deleteCompleted = (array, checked, textInputId) => {
+  if (checked) {
+    const task = {
+      index: textInputId,
+    };
+    array = deleteTask(array, task);
+  }
+  return array;
+};
+
 export {
-  addTask, deleteTask, rearrangeIndexs, updateTask,
+  addTask, deleteTask, rearrangeIndexs, updateTask, deleteCompleted,
 };
