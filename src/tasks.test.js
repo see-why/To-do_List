@@ -3,10 +3,10 @@ import {
   deleteTask,
   updateTask,
   deleteCompleted,
-} from './tasks.js';
+} from './tasks';
 import {
   updateStatus,
-} from './list.js';
+} from './list';
 
 const task1 = {
   index: 0,

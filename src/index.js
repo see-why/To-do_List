@@ -1,8 +1,8 @@
 import './style.css';
-import { toggleCompleteTask, strikeText, updateStatus } from './list.js';
+import { toggleCompleteTask, strikeText, updateStatus } from './list';
 import {
   addTask, deleteTask, rearrangeIndexs, updateTask, deleteCompleted,
-} from './tasks.js';
+} from './tasks';
 
 class TodoList {
   constructor() {
