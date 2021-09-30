@@ -1,5 +1,12 @@
-import { addTask, deleteTask, updateTask } from './tasks.js';
-import { updateStatus } from './list.js';
+import {
+  addTask,
+  deleteTask,
+  updateTask,
+  deleteCompleted,
+} from './tasks.js';
+import {
+  updateStatus,
+} from './list.js';
 
 const task1 = {
   index: 0,
@@ -48,13 +55,6 @@ describe('delete tasks', () => {
 
     expect(currentList).toHaveLength(3);
   });
-
-  test('delete two tasks', () => {
-    const List1 = deleteTask(taskList, task4);
-    const List2 = deleteTask(List1, task3);
-
-    expect(List2).toHaveLength(2);
-  });
 });
 
 describe('update tasks', () => {
@@ -87,14 +87,47 @@ describe('update tasks', () => {
 
 describe('update task complete status', () => {
   test('update status to true', () => {
-    const newList = updateStatus(taskList, '2', true);
-
+    const newList = updateStatus(taskList, 2, true);
     expect(newList[1].completed).toBe(true);
   });
 
   test('update status to false', () => {
-    const newList = updateStatus(taskList, '2', false);
-
+    const newList = updateStatus(taskList, 2, false);
     expect(newList[1].completed).toBe(false);
+  });
+});
+
+describe('Clear all completed', () => {
+  const List = [
+    {
+      index: 1,
+      description: 'One',
+      completed: false,
+    }, {
+      index: 2,
+      description: 'Two',
+      completed: false,
+    }, {
+      index: 3,
+      description: 'Three',
+      completed: false,
+    }, {
+      index: 4,
+      description: 'Four',
+      completed: false,
+    },
+  ];
+  test('Delete two tasks that are completed', () => {
+    let newList = updateStatus(List, 2, true);
+    newList = updateStatus(newList, 3, true);
+    newList = deleteCompleted(newList);
+    expect(newList).toHaveLength(2);
+  });
+  test('Delete three tasks that are completed', () => {
+    let newList = updateStatus(List, 2, true);
+    newList = updateStatus(newList, 3, true);
+    newList = updateStatus(newList, 4, true);
+    newList = deleteCompleted(newList);
+    expect(newList).toHaveLength(1);
   });
 });
