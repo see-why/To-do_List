@@ -24,8 +24,8 @@ const updateTask = (array, task) => {
   if (task.description === '') {
     deleteTask(array, task);
   } else {
-    array.forEach((item, index) => {
-      if ((index + 1).toString() === task.index) {
+    array.forEach((item) => {
+      if (item.index === task.index) {
         item.description = task.description;
       }
     });
