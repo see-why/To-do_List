@@ -13,8 +13,11 @@ const strikeText = (checked, className) => {
 };
 
 const updateStatus = (array, itemId, checked) => {
-  const key = array.findIndex((x) => x.index === itemId);
-  array[key].completed = checked;
+  array.forEach((item) => {
+    if (item.index === itemId) {
+      item.completed = checked;
+    }
+  });
   return array;
 };
 

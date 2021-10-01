@@ -1,8 +1,8 @@
 import './style.css';
-import { toggleCompleteTask, strikeText, updateStatus } from './list.js';
+import { toggleCompleteTask, strikeText, updateStatus } from './list';
 import {
   addTask, deleteTask, rearrangeIndexs, updateTask, deleteCompleted,
-} from './tasks.js';
+} from './tasks';
 
 class TodoList {
   constructor() {
@@ -21,24 +21,17 @@ class TodoList {
   }
 
   clearAllCompleted = () => {
-    const arrayOfLists = Array.from(document.getElementsByClassName('todo-list-ul'));
-
-    arrayOfLists.forEach((item) => {
-      const check = item.firstChild.firstChild.firstChild;
-      const textInput = item.firstChild.firstChild.lastChild;
-
-      this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks, check.checked, textInput.id);
-    });
-    this.ArrayOfTasks = rearrangeIndexs(this.ArrayOfTasks);
+    this.ArrayOfTasks = deleteCompleted(this.ArrayOfTasks);
     this.saveToLocalStorage();
     this.reloadPage();
   };
 
-  loadTasks() {
+  addButtonEvent = () => {
     const button = document.getElementById('clear-list-button');
-
     button.addEventListener('click', this.clearAllCompleted);
+  }
 
+  addInputTagEvent = () => {
     const addInput = document.getElementById('add-new-task');
 
     addInput.addEventListener('change', () => {
@@ -53,7 +46,9 @@ class TodoList {
       this.saveToLocalStorage();
       this.reloadPage();
     });
+  }
 
+  loadTasks() {
     const divHolder = document.getElementById('list-holder');
 
     if (localStorage.getItem('Tasks') !== null) {
@@ -79,7 +74,8 @@ class TodoList {
         checkInput.addEventListener('change', (e) => {
           const textInput = e.target.parentNode.lastChild;
           toggleCompleteTask(textInput);
-          this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, textInput.id, checkInput.checked);
+          this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, parseInt(textInput.id, 10),
+            checkInput.checked);
           this.saveToLocalStorage();
         });
 
@@ -109,7 +105,7 @@ class TodoList {
 
         textInput.addEventListener('change', () => {
           const task = {
-            index: textInput.id,
+            index: parseInt(textInput.id, 10),
             description: textInput.value,
             completed: false,
           };
@@ -133,7 +129,7 @@ class TodoList {
 
           if (textInput.readOnly === false) {
             const task = {
-              index: textInput.id,
+              index: parseInt(textInput.id, 10),
             };
 
             this.ArrayOfTasks = deleteTask(this.ArrayOfTasks, task);
@@ -155,3 +151,5 @@ class TodoList {
 
 const App = new TodoList();
 App.loadTasks();
+App.addButtonEvent();
+App.addInputTagEvent();

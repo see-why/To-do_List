@@ -4,11 +4,16 @@
   "description": "A simple project containing ready-to-use webpack set-up",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest --coverage",
+    "test": "npx jest",
+    "coverage": "npx jest --coverage",
     "start": "npx webpack serve --open",
     "build": "npx webpack",
     "lint": "npx eslint . && npx stylelint **/*.{css,scss} && npx hint .",
     "watch": "npx jest --watchAll"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",

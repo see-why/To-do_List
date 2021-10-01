@@ -1,6 +1,6 @@
 const addTask = (array, task) => {
   const size = array.length;
-  task.index = (size + 1).toString();
+  task.index = size + 1;
 
   array.push(task);
 
@@ -14,7 +14,7 @@ const deleteTask = (array, task) => {
 
 const rearrangeIndexs = (array) => {
   array.forEach((item, index) => {
-    item.index = (index + 1).toString();
+    item.index = index + 1;
   });
 
   return array;
@@ -24,8 +24,8 @@ const updateTask = (array, task) => {
   if (task.description === '') {
     deleteTask(array, task);
   } else {
-    array.forEach((item, index) => {
-      if ((index + 1).toString() === task.index) {
+    array.forEach((item) => {
+      if (item.index === task.index) {
         item.description = task.description;
       }
     });
@@ -34,13 +34,9 @@ const updateTask = (array, task) => {
   return array;
 };
 
-const deleteCompleted = (array, checked, textInputId) => {
-  if (checked) {
-    const task = {
-      index: textInputId,
-    };
-    array = deleteTask(array, task);
-  }
+const deleteCompleted = (array) => {
+  array = array.filter((task) => !task.completed);
+  array = rearrangeIndexs(array);
   return array;
 };
 
