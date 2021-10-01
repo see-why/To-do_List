@@ -73,6 +73,7 @@ class TodoList {
 
         checkInput.addEventListener('change', (e) => {
           const textInput = e.target.parentNode.lastChild;
+          textInput.readOnly = false;
           toggleCompleteTask(textInput);
           this.ArrayOfTasks = updateStatus(this.ArrayOfTasks, parseInt(textInput.id, 10),
             checkInput.checked);
