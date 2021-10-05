@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # TodoList
-A simple HTML list of To Do tasks, styled with Css and added dynamically using Javascript.
+A simple HTML list of To Do tasks, styled with Css and added dynamically using JavaScript.
 Webpack is used in bundling the respective components.
 
 ![screenshot](/images/Landing.PNG)
